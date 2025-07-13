@@ -20,12 +20,12 @@ public class SignupController {
     @GetMapping("/signup")
     public String display(Model model, @RequestParam(value = "error", required = false) String error) {
         
-        return "signup"; 
+        return "jsp/signup"; 
     }
     @GetMapping("/login")
     public String nav()
     {
-    	return "login";
+    	return "jsp/login";
     }
 
     @GetMapping("/signin")
@@ -44,10 +44,10 @@ public class SignupController {
         } catch (DataIntegrityViolationException e) {
             // Email already exists
         	  redirectAttributes.addFlashAttribute("error", "Email already registered!");
-              return "redirect:/si/signup";  
+              return "redirect:/si/jsp/signup";  
         }
 
-        return "login";
+        return "jsp/login";
     }
     @PostMapping("/next")
     public String loging(@RequestParam("emailid") String emailid,@RequestParam("password") String password)
@@ -56,10 +56,10 @@ public class SignupController {
 
     	    if (user != null && user.getPassword().equals(password)) {
     	        // Credentials are correct
-    	        return "home"; // Show success page
+    	        return "jsp/home"; // Show success page
     	    } else {
     	        // Invalid login
-    	        return "login"; // Or redirect to an error page
+    	        return "jsp/login"; // Or redirect to an error page
     	    }
     	
     }
