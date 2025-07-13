@@ -20,18 +20,18 @@ public class LoginController {
 	  private EntityRepo entityrepo;
 	  @GetMapping("/login")
 	  public String display() {
-		  return "pages/login";
+		  return "jsp/login";
 	  }
 	  @PostMapping("/logined")
 	  public String login()
 	  {
 		  
-		  return "pages/new";
+		  return "jsp/new";
 	  }
 	  @GetMapping("/signup")
 		public String nav()
 		{
-			return "pages/signup";
+			return "jsp/signup";
 		}
 	  @RequestMapping("/{viewName}")
 	    public String forwardToView(@PathVariable String viewName) {
