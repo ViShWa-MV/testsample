@@ -36,7 +36,7 @@ public class StudentController {
 		studentRepository.save(st);
 		System.out.println( result);
 		
-		return "submitted";
+		return "pages/submitted";
 	}
 	// Controller method
 	@PostMapping("/submittedlist")
@@ -44,13 +44,13 @@ public class StudentController {
     List<StudentEntity> students = studentRepository.findAll();
     model.addAttribute("students", students);
     
-	    return "submittedlist"; 
+	    return "pages/submittedlist"; 
 	}
 	@PostMapping("/deletelist")
 	public String delete()
 	{
 		
-		return "delete";
+		return "pages/delete";
 	}
 
 	
@@ -61,18 +61,18 @@ public class StudentController {
 	  {  
 		  studentRepository.delete(stu);
 		
-		  return "delete1";
+		  return "pages/delete1";
 	  
 	  } 
 	  model.addAttribute("msg", "Student not found..");
-	  return "delete2";
+	  return "pages/delete2";
 	  
 	  
 	  }
 	  @PostMapping("/update")
 	  public String update()
 	  {
-		  return "update";
+		  return "pages/update";
 		  
 	  }
 	  @PostMapping("/update1")
@@ -82,10 +82,10 @@ public class StudentController {
 		  if(stu!=null )  
 		  { 
 			  
-			  return "new1";
+			  return "pages/new1";
 		  }
 		  
-		  return "update1";
+		  return "pages/update1";
 		  
 	  }
 	  @PostMapping("/update2")
@@ -95,7 +95,7 @@ public class StudentController {
 					 phonenumber,  address); 
 		  studentRepository.save(st);
 		  
-		  return "home";
+		  return "pages/home";
 		  
 	  }
 	  
